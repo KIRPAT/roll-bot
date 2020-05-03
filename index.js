@@ -20,7 +20,7 @@ const constant = {
 const isThisABotCommand = (message) => {
   const commandCandidate = message.content.substr(0, 5);
   const isThisABotCommandResult = commandCandidate === constant.command;
-  console.log({ isThisABotCommandResult, commandCandidate });
+  //console.log({ isThisABotCommandResult, commandCandidate });
   return isThisABotCommandResult;
 }
 
@@ -30,9 +30,9 @@ const isThisABotCommand = (message) => {
  */
 const isAliveCheck = (message) => {
   const argumentCandidate = message.content.split(constant.command);
-  console.log({ argumentCandidate });
+  //console.log({ argumentCandidate });
   const isAliveCheckResult = argumentCandidate[1].match(constant.regex.areYouThere);
-  console.log({ isAliveCheckResult });
+  //console.log({ isAliveCheckResult });
   return isAliveCheckResult;
 }
 
@@ -56,7 +56,8 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-  console.log(`${message.author.username} said: "${message.content}"`);
+
+  message.author.bot === false && console.log(`${message.author.username} said: "${message.content}"`);
 
   // If the message is not coming from the bot, and the message is a bot command!
   if (message.author.bot === false && isThisABotCommand(message)) {
