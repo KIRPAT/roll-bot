@@ -1,4 +1,4 @@
-import Utilities from "../Utilities/index.js"
+import { botName } from "../Constants/index.js"
 
 /**
  * Contains various actions that the RollBot can do in the server.
@@ -9,7 +9,15 @@ import Utilities from "../Utilities/index.js"
  *  Changin the name of a user is an aciton. 
  */
 export default class Actions {
+  /**
+   * Short-hand version for "message.channel.send(...)".
+   * @param {String} messageText
+   */
+  static sendMessage(message, messageText) {
+    message.channel.send(messageText);
+  }
+
   static sendIsAliveMessage(message) {
-    Utilities.sendMessage(message, `RollBot is ready to serve master ${message.author.username}!`)
+    this.sendMessage(message, `${botName} is ready to serve master ${message.author.username}!`)
   }
 }

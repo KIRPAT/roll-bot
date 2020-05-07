@@ -1,5 +1,5 @@
-import { command, regex } from '../Constants/index.js'
-
+import { command, regex } from '../Constants/index.js';
+import DiceHandler from '../Handlers/DiceHandler/index.js';
 /**
  * Utility methods for various stuff.
  * 
@@ -7,18 +7,10 @@ import { command, regex } from '../Constants/index.js'
  */
 export default class Utilities {
   /**
-   * Testing method. Don't use anywhere.
+   * Testing method. Don't use it anywhere.
    */
   static helloWord() {
     console.log("Hello World");
-  }
-
-  /**
-   * Short-hand version for "message.channel.send(...)".
-   * @param {String} messageText
-   */
-  static sendMessage(message, messageText) {
-    message.channel.send(messageText);
   }
 
   /**
@@ -31,6 +23,17 @@ export default class Utilities {
     const isThisABotCommandResult = commandCandidate === command;
     //console.log({ isThisABotCommandResult, commandCandidate });
     return isThisABotCommandResult;
+  }
+
+  /**
+   * Attempts to retreive the argument section of the command and applies regex check on it.
+   * 
+   * @param {Object} message 
+   */
+  static getArgument(message) {
+    const argumentCandidate = message.content.split(" ")[1];
+    let resultingArgument = DiceHandler.isTheDiceArgumentValid(argumentCandidate);
+    return resultingArgument;
   }
 
   /**
