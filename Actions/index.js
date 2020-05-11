@@ -17,7 +17,11 @@ export default class Actions {
     message.channel.send(messageText);
   }
 
+  static sendHelpMessage(message, messageText) {
+    this.sendMessage(message, `\` This is a help message! \``)
+  }
+
   static sendIsAliveMessage(message) {
-    this.sendMessage(message, `${botName} is ready to serve master ${message.author.username}!`)
+    this.sendMessage(message, `\`${botName} is ready to serve master ${message.author.username}!\``)
   }
 }

@@ -47,4 +47,14 @@ export default class Utilities {
     //console.log({ isAliveCheckResult });
     return isAliveCheckResult;
   }
+
+  /**
+   * Checks if the command argument is "help" or not.
+   * @param {Object} message 
+   */
+  static isHelpCheck(message) {
+    const argumentCandidate = message.content.split(command);
+    const isHelpCheckResult = argumentCandidate[1].match(regex.help);
+    return isHelpCheckResult;
+  }
 }

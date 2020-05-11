@@ -19,4 +19,5 @@ export const argument = {};
 export const regex = {
   areYouThere: /Are you here my little servant?/i,
   roll: /(\d+)?d(\d+)([\+\-]\d+)?/ig,
+  help: /help/ig
 };

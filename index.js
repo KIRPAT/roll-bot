@@ -40,6 +40,10 @@ client.on('message', message => {
       Actions.sendIsAliveMessage(message);
     }
 
+    if (Utilities.isHelpCheck(message) !== null) {
+      Actions.sendHelpMessage(message);
+    }
+
     // !roll 2d6+9
     if (Utilities.getArgument(message) !== null) {
       const argument = Utilities.getArgument(message);

@@ -95,7 +95,7 @@ export default class DiceHandler {
       }
     }
 
-    let finalString = `${evaluatedString}(${diceRoll.getAddition()}) = ${resultingTotal + parseInt(diceRoll.getAddition())}`
+    let finalString = `\`${evaluatedString}(${diceRoll.getAddition()}) = ${resultingTotal + parseInt(diceRoll.getAddition())}\``
     console.log(finalString)
     return finalString;
   }
