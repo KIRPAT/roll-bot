@@ -17,8 +17,12 @@ export default class Actions {
     message.channel.send(messageText);
   }
 
-  static sendHelpMessage(message, messageText) {
-    this.sendMessage(message, `\` This is a help message! \``)
+  static sendHelpMessage(message) {
+    this.sendMessage(message, ` \`\`\` 
+    This is a help message!
+    
+    With multi lines.
+    \`\`\` `)
   }
 
   static sendIsAliveMessage(message) {
