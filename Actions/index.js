@@ -1,4 +1,4 @@
-import { botName } from "../Constants/index.js"
+import { botName, command } from "../Constants/index.js"
 
 /**
  * Contains various actions that the RollBot can do in the server.
@@ -19,9 +19,17 @@ export default class Actions {
 
   static sendHelpMessage(message) {
     this.sendMessage(message, ` \`\`\` 
-    This is a help message!
     
-    With multi lines.
+    The **${botName}** command is **${command}**.
+
+    **Example roll:** ${command} 3d20-8
+
+    **3** -> (Optional) How many times you roll the dice. Must be a positive integer.
+    **20** -> Die type. Can be any positive integer. 6, 10, 20... etc.
+    **-8** -> (Optional) The integer you want to add or extract from the final sum.
+
+    Roll argument examples: **d10, 2d20, d15+3, 5d20-9 , 100d150+1000**
+
     \`\`\` `)
   }
 
