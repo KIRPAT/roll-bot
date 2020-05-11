@@ -26,7 +26,7 @@ export default class Actions {
 
     3 -> (Optional) How many times you roll the dice. Must be a positive integer.
     20 -> Die type. Can be any positive integer. 6, 10, 20... etc.
-    -8 -> (Optional) The integer you want to add or extract from the final sum.
+    -8 -> (Optional) The integer you want to add or subtract from the final sum.
 
     Roll argument examples: d10, 2d20, d15+3, 5d20-9 , 100d150+1000
 
