@@ -24,6 +24,7 @@ import DiceHandler from './Handlers/DiceHandler/index.js';
 
 client.once('ready', () => {
   console.log(`${botName} is ready to roll!`);
+  client.user.setActivity("!roll help");
 });
 
 client.on('message', message => {
@@ -55,5 +56,5 @@ client.on('message', message => {
   }
 });
 
-client.user.setActivity('!roll help', { type: 'PLAYING' })
+
 client.login(process.env.BOT_KEY);
