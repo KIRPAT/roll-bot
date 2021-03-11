@@ -1,6 +1,6 @@
 # RollBot
 
-A dice rolling bot that you needed, but you never knew.
+A dice rolling bot that you needed, but you never knew.``!roll help`` to see how to use it.
 
 #### Prerequisities:
   - Every bot has a unique key, that you should **NEVER EVER SHARE** with anyone. You have to write yours inside the ``.env`` file that should be located at the root folder. (Right next to ``package.json`` and ``index.js``.) 
