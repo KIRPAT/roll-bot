@@ -55,5 +55,5 @@ client.on('message', message => {
   }
 });
 
-client.user.setActivity("!roll help", { type: 'CUSTOM_STATUS' });
+client.user.setActivity('!roll help', { type: 'PLAYING' })
 client.login(process.env.BOT_KEY);
